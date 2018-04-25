@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Visao : MonoBehaviour {
 
+    /// <summary>
+    /// Game Object Empty Na Frente da Cabeça do Jogador, com uma animação de movimentação
+    /// </summary>
+
+
     public GameObject Inimigo;
-    //private bool avistou = false;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -24,11 +29,12 @@ public class Visao : MonoBehaviour {
         if (Physics.Raycast(transform.position, transform.forward, out hit, 10.0f))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
+            Debug.Log(hit.collider.gameObject.tag);
             if (hit.collider.gameObject.tag == "Soldado")
             {
-                Debug.Log("Avistou");
+                
                 Inimigo = hit.collider.gameObject;
-                //minhas_ordens = Ordens.Segue;
+                //Informar que avistou algo
                 return true;
             }
             else
