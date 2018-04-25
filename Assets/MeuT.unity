@@ -220,7 +220,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 93196050}
-  m_LocalRotation: {x: 0.008296076, y: -0.011210243, z: 0.041526314, w: 0.99904007}
+  m_LocalRotation: {x: 0.008296078, y: -0.011210243, z: 0.04152632, w: 0.99904007}
   m_LocalPosition: {x: -0.01501522, y: 0, z: 0.000000007152557}
   m_LocalScale: {x: 1.0000005, y: 0.9999999, z: 0.99999964}
   m_Children: []
@@ -248,7 +248,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400080, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 93774217}
-  m_LocalRotation: {x: 0.021653974, y: 0.043846976, z: -0.7455499, w: 0.6646532}
+  m_LocalRotation: {x: 0.021653974, y: 0.04384698, z: -0.7455499, w: 0.66465324}
   m_LocalPosition: {x: -0.24112545, y: 0, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999976, z: 1.0000002}
   m_Children: []
@@ -1145,6 +1145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063385248}
   - component: {fileID: 1063385249}
+  - component: {fileID: 1063385250}
   m_Layer: 0
   m_Name: Visao
   m_TagString: Untagged
@@ -1182,6 +1183,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1063385250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063385247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50708e659f1b09459ae73022a8b98c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inimigo: {fileID: 0}
 --- !u!1001 &1083346729
 Prefab:
   m_ObjectHideFlags: 0
@@ -1229,6 +1242,10 @@ Prefab:
       propertyPath: m_TagString
       value: Soldado
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dffbd9326394a8d47a87a1e2aec70a59, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 2}
   m_IsPrefabParent: 0
@@ -1911,7 +1928,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400028, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780537081}
-  m_LocalRotation: {x: 0.66058564, y: -0.03674357, z: 0.05939423, w: 0.74749506}
+  m_LocalRotation: {x: 0.66058564, y: -0.036743574, z: 0.05939423, w: 0.7474951}
   m_LocalPosition: {x: -0.12248317, y: -0.000000026226044, z: -0.000000038146972}
   m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
   m_Children:
@@ -2353,7 +2370,7 @@ Animator:
   m_GameObject: {fileID: 2090589784}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b6c33e1d6632025468fb37a04e312606, type: 3}
-  m_Controller: {fileID: 9100000, guid: e4d38f097ea35254fb4b833d568bb089, type: 2}
+  m_Controller: {fileID: 9100000, guid: dffbd9326394a8d47a87a1e2aec70a59, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

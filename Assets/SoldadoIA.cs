@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class SoldadoIA : MonoBehaviour {
 
 
-    public enum Ordens { Descansa, Ronda, Segue };
+    public enum Ordens { Descansa, Ronda, Segue, Ataque };
     public GameObject Olho;
     public Ordens minhas_ordens;
     public GameObject PontoA;
@@ -15,38 +15,51 @@ public class SoldadoIA : MonoBehaviour {
     private NavMeshAgent Soldado;
     public float tempo = 0;
     private GameObject Inimigo;
+    private Actions Acoes;
+
 	// Use this for initialization
 	void Start () {
         minhas_ordens = Ordens.Descansa;
         Soldado = GetComponent<NavMeshAgent>();
-	}
+        GetComponent<PlayerController>().SetArsenal("Rifle");
+        Acoes = GetComponent<Actions>();
+        //Acoes.Stay();
+        //Acoes.Aiming();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         CumprirOrdens();
-        Avistou();
+        
 	}
 
     void CumprirOrdens()
     {
         if(minhas_ordens == Ordens.Descansa)
         {
+            Buscar();
             tempo += Time.deltaTime;
             Soldado.speed = 0;
             if (tempo > 10)
             {
                 tempo = 0;
                 minhas_ordens = Ordens.Ronda;
+                //Correr
+                Acoes.Run();
             }
+            
         }
         if(minhas_ordens == Ordens.Ronda)
         {
+            Buscar();
             Soldado.speed = 5;
             tempo += Time.deltaTime;
             if(tempo > 30)
             {
                 tempo = 0;
                 minhas_ordens = Ordens.Descansa;
+                //Parar
+                Acoes.Stay();
             }
 
 
@@ -73,6 +86,24 @@ public class SoldadoIA : MonoBehaviour {
         {
             Soldado.speed = 5;
             Soldado.SetDestination(Inimigo.transform.position);
+            if(Vector3.Distance(transform.position, Inimigo.transform.position) < 5)
+            {
+                minhas_ordens = Ordens.Ataque;
+                Acoes.Aiming();
+                
+            }
+            //Acoes.Attack();
+            
+        }
+
+
+        if(minhas_ordens == Ordens.Ataque)
+        {
+            Soldado.speed = 0;
+            if (Vector3.Distance(transform.position, Inimigo.transform.position) > 6)
+            {
+                minhas_ordens = Ordens.Segue;
+            }
         }
 
     }
@@ -80,20 +111,15 @@ public class SoldadoIA : MonoBehaviour {
 
 
     ////Visão
-    void Avistou()
+    void Buscar()
     {
-        RaycastHit hit;
-        
-        if (Physics.Raycast(Olho.transform.position, transform.forward, out hit, 10.0f))
+        if(Olho.GetComponent<Visao>().Avistou() == true)
         {
-            Debug.DrawLine(Olho.transform.position, hit.point);
-            if (hit.collider.gameObject.tag == "Soldado")
-            {
-                Debug.Log("Avistou");
-                Inimigo = hit.collider.gameObject;
-                minhas_ordens = Ordens.Segue;
-            }
+            minhas_ordens = Ordens.Segue;
+            Inimigo = Olho.GetComponent<Visao>().Inimigo;
         }
+
+
     }
 
 
