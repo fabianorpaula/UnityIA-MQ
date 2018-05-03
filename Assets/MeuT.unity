@@ -4047,6 +4047,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 3
+  MeuDano: 2
+  MeuVisao: 2
+  MeuAlcance: 3
+  MeuVelocidade: 0
   Olho: {fileID: 1851513943}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -6409,6 +6414,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 0
+  MeuVisao: 2
+  MeuAlcance: 5
+  MeuVelocidade: 3
   Olho: {fileID: 1474082987}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -9999,6 +10009,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 10
+  MeuVisao: 0
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 778226359}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -12494,6 +12509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 0
+  MeuVisao: 0
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 0}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -13445,6 +13465,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 3
+  MeuDano: 3
+  MeuVisao: 3
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 1579521130}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -14786,6 +14811,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 0
+  MeuVisao: 0
+  MeuAlcance: 10
+  MeuVelocidade: 0
   Olho: {fileID: 1907048773}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -16982,6 +17012,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 3
+  MeuDano: 1
+  MeuVisao: 3
+  MeuAlcance: 1
+  MeuVelocidade: 0
   Olho: {fileID: 1333750419}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -17310,6 +17345,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 2
+  MeuDano: 5
+  MeuVisao: 2
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 152214306}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -19261,6 +19301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 0
+  MeuVisao: 0
+  MeuAlcance: 0
+  MeuVelocidade: 10
   Olho: {fileID: 1946207760}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -19817,6 +19862,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 0
+  MeuVisao: 3
+  MeuAlcance: 3
+  MeuVelocidade: 3
   Olho: {fileID: 1186920450}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -25189,6 +25239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 1
+  MeuDano: 1
+  MeuVisao: 1
+  MeuAlcance: 1
+  MeuVelocidade: 5
   Olho: {fileID: 1359704264}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -29942,6 +29997,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 10
+  MeuVisao: 0
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 761989246}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -30184,6 +30244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 1
+  MeuDano: 2
+  MeuVisao: 3
+  MeuAlcance: 4
+  MeuVelocidade: 0
   Olho: {fileID: 1397700450}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -33238,6 +33303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 3
+  MeuDano: 2
+  MeuVisao: 5
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 1591809868}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -33600,6 +33670,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 5
+  MeuDano: 1
+  MeuVisao: 1
+  MeuAlcance: 1
+  MeuVelocidade: 1
   Olho: {fileID: 2118326037}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -35851,6 +35926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 0
+  MeuDano: 0
+  MeuVisao: 10
+  MeuAlcance: 0
+  MeuVelocidade: 0
   Olho: {fileID: 2128018503}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}
@@ -36148,6 +36228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fa64d1c31ce7240b3395387035f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeuLife: 2
+  MeuDano: 2
+  MeuVisao: 2
+  MeuAlcance: 2
+  MeuVelocidade: 2
   Olho: {fileID: 1063385247}
   PontoA: {fileID: 801926520}
   PontoB: {fileID: 0}

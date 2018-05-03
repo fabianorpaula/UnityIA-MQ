@@ -10,7 +10,7 @@ public class Visao : MonoBehaviour {
 
 
     public GameObject Inimigo;
-    
+    public GameObject Soldado;
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +25,8 @@ public class Visao : MonoBehaviour {
     public bool Avistou()
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 10.0f))
+        int alcance = 10 + Soldado.GetComponent<SoldadoIA>().MeuVisao;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, alcance))
         {
             //Debug.DrawLine(transform.position, hit.point, Color.red);
             //Debug.Log(hit.collider.gameObject.tag);

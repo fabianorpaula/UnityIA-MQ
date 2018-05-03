@@ -5,6 +5,16 @@ using UnityEngine.AI;
 
 public class SoldadoIA : MonoBehaviour {
 
+    /// <summary>
+    /// Dados
+    /// </summary>
+    public int MeuLife = 0;
+    public int MeuDano = 0;
+    public int MeuVisao = 0;
+    public int MeuAlcance = 0;
+    public int MeuVelocidade = 0;
+
+
     //OS ESTADOS
     //Descansar - Ronda - Segue - Ataque
     public enum Ordens { Descansa, Ronda, Segue, Ataque, Morto };
@@ -104,7 +114,7 @@ public class SoldadoIA : MonoBehaviour {
             //Para buscar inimigo
             Buscar();
             //Tempo andando
-            Soldado.speed = 5;
+            Soldado.speed = 5 + MeuVelocidade;
             tempo += Time.deltaTime;
             if(tempo > 30)
             {
@@ -130,7 +140,7 @@ public class SoldadoIA : MonoBehaviour {
         }
         if(minhas_ordens == Ordens.Segue)
         {
-            Soldado.speed = 5;
+            Soldado.speed = 5 + MeuVelocidade;
             Soldado.SetDestination(Inimigo.transform.position);
             if(Vector3.Distance(transform.position, Inimigo.transform.position) < 5)
             {
@@ -146,7 +156,7 @@ public class SoldadoIA : MonoBehaviour {
         {
             Soldado.speed = 0;
             transform.LookAt(Inimigo.transform.position);
-            if (Vector3.Distance(transform.position, Inimigo.transform.position) > 6)
+            if (Vector3.Distance(transform.position, Inimigo.transform.position) > (6+MeuAlcance))
             {
                 minhas_ordens = Ordens.Segue;
                 Acoes.Run();
@@ -195,10 +205,11 @@ public class SoldadoIA : MonoBehaviour {
     void Atirar()
     {
         
-            Acoes.Attack();
-            GameObject Bala = Instantiate(capsula, pontodetiro.transform.position, Quaternion.identity);
-            Bala.GetComponent<Rigidbody>().AddForce(pontodetiro.transform.forward*150);
-            Destroy(Bala, 5f);
+        Acoes.Attack();
+        GameObject Bala = Instantiate(capsula, pontodetiro.transform.position, Quaternion.identity);
+        Bala.GetComponent<Rigidbody>().AddForce(pontodetiro.transform.forward*150);
+        Bala.GetComponent<Tiro>().Dano = 1 + MeuDano;
+        Destroy(Bala, 5f);
         
     }
 

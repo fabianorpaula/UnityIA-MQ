@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Dano : MonoBehaviour {
     //Vida
-    int life = 10;
+    public int life = 10;
     bool morto = false;
     //Ações Animadas
     private Actions Acoes;
     // Use this for initialization
     void Start () {
         Acoes = GetComponent<Actions>();
+        life = life + GetComponent<SoldadoIA>().MeuLife;
     }
 	
 	// Update is called once per frame
@@ -24,11 +25,11 @@ public class Dano : MonoBehaviour {
         //Debug.Log(col.gameObject.tag);
         if(col.gameObject.tag == "Bala" && morto == false)
         {
-            
-                life--;
-                Destroy(col.gameObject);
-                Acoes.Damage();
-                if (life == 0)
+
+            life = life - col.gameObject.GetComponent<Tiro>().Dano;
+            Destroy(col.gameObject);
+            Acoes.Damage();
+            if (life <= 0)
                 {
 
                     //Debug.Log("Morreu");
