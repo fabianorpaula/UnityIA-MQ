@@ -7,7 +7,7 @@ public class SoldadoIA : MonoBehaviour {
 
     //OS ESTADOS
     //Descansar - Ronda - Segue - Ataque
-    public enum Ordens { Descansa, Ronda, Segue, Ataque };
+    public enum Ordens { Descansa, Ronda, Segue, Ataque, Morto };
     //GameObjesc
     //Olho para fazer campo de visão
     public GameObject Olho;
@@ -21,13 +21,19 @@ public class SoldadoIA : MonoBehaviour {
     public GameObject capsula;
     //Ponto de Tiro
     public GameObject pontodetiro;
-
+    //Caminhos
+    public List<GameObject> Caminhos;
+    public int destino_c = 0;
     /// <summary>
     /// As ordens
     /// </summary>
     public Ordens minhas_ordens;
     //Ações Animadas
     private Actions Acoes;
+    /// <summary>
+    /// Dano
+    private Dano dano;
+    /// </summary>
 
 
     public bool pos = false;
@@ -44,11 +50,12 @@ public class SoldadoIA : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        float posx = Random.Range(5, 300);
-        float posy = 0.55f;
-        float posz = Random.Range(5, 300);
+        int total_pos = Caminhos.Count - 1;
+        destino_c = Random.Range(0, total_pos);
 
-        transform.position = new Vector3(posx, posy, posz);
+
+
+        transform.position = Caminhos[destino_c].transform.position;
 
 
         minhas_ordens = Ordens.Descansa;
@@ -60,12 +67,18 @@ public class SoldadoIA : MonoBehaviour {
         Acoes = GetComponent<Actions>();
         //Acoes.Stay();
         //Acoes.Aiming();
+
+        ///Dano
+        dano = GetComponent<Dano>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         CumprirOrdens();
-        
+        if(dano.InformarStatus())
+        {
+            minhas_ordens = Ordens.Morto;
+        }
 	}
 
     void CumprirOrdens()
@@ -100,25 +113,19 @@ public class SoldadoIA : MonoBehaviour {
                 //Parar
                 Acoes.Stay();
             }
-
-
-            if (pos)
-            {
+            
+            
+                int destinof = destino_c + 1;
                 // transform.position = Vector3.MoveTowards(this.transform.position, PontoA.transform.position, 0.5f);
-                Soldado.SetDestination(PontoA.transform.position);
-                if (Vector3.Distance(transform.position, PontoA.transform.position) < 2)
+                Soldado.SetDestination(Caminhos[destinof].transform.position);
+                if (Vector3.Distance(transform.position, Caminhos[destinof].transform.position) < 2)
                 {
-                    pos = false;
+                    destino_c = destino_c + 1;
+                    if(destino_c >= Caminhos.Count-1)
+                    {
+                        destino_c = 0;
+                    }
                 }
-            }else
-            {
-                Soldado.SetDestination(PontoB.transform.position);
-                if (Vector3.Distance(transform.position, PontoB.transform.position) < 2)
-                {
-                    pos = true;
-                }
-            }
-           
             
         }
         if(minhas_ordens == Ordens.Segue)
@@ -131,7 +138,6 @@ public class SoldadoIA : MonoBehaviour {
                 Acoes.Aiming();
                 
             }
-            //Acoes.Attack();
             
         }
 
@@ -165,7 +171,12 @@ public class SoldadoIA : MonoBehaviour {
 
         }
 
-    }
+        if (minhas_ordens == Ordens.Morto)
+        {
+            Soldado.speed = 0;
+        }
+
+        }
 
 
 

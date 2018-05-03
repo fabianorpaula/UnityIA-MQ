@@ -28,8 +28,8 @@ public class Visao : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 10.0f))
         {
-            Debug.DrawLine(transform.position, hit.point, Color.red);
-            Debug.Log(hit.collider.gameObject.tag);
+            //Debug.DrawLine(transform.position, hit.point, Color.red);
+            //Debug.Log(hit.collider.gameObject.tag);
             if (hit.collider.gameObject.tag == "Soldado")
             {
                 
